@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Navbar = () => {
     return (
         <nav className="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -13,16 +15,16 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="index.html">Home</a>
+                            <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <Link href="/about">about</Link>
                         </li>
                         <li>
-                            <a href="post.html">Sample Post</a>
+                            <Link href="/post">Post</Link>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <Link href="/contact">Contact</Link>
                         </li>
                     </ul>
                 </div>

@@ -6,7 +6,6 @@ const LandingPage = ({ children } : { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <Header />
       {children}
       <Footer />
     </>
