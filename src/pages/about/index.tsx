@@ -3,7 +3,7 @@ import LandingPage from "@/common/components/layouts/landing-page";
 const AboutPage = () => {
   return (
     <LandingPage>
-      <header className="intro-header" style={{ backgroundImage: "url('img/about-bg.jpg')" }}>
+      <header className="intro-header" style={{ backgroundImage: "url('/img/about-bg.jpg')" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
