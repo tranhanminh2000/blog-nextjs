@@ -1,16 +1,17 @@
 import LandingPage from '@/common/components/layouts/landing-page'
+import { getPostCollection } from '@/utilities/data-handler'
 import Link from 'next/link'
 
 export async function getStaticProps() {
-  let response = await fetch(`${process.env.HOST_NAME}/api/posts`).then(response => response.json())
+  let posts = await getPostCollection();
   return {
     props: {
-      posts: response.posts ? response.posts : null
+      posts: posts
     }
   }
 }
 
-export default function Home({ posts }) {
+export default function Home({ posts }: any) {
 
   return (
     <LandingPage>

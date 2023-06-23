@@ -1,7 +1,6 @@
 import LandingPage from "@/common/components/layouts/landing-page";
-import { useRouter } from 'next/router'
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
     const { id } = context.query
     let response = await fetch(`${process.env.HOST_NAME}/api/posts/${id}`).then(response => response.json())
 
@@ -21,7 +20,7 @@ export async function getServerSideProps(context) {
     }
 }
 
-const PostPage = ({ post }) => {
+const PostPage = ({ post }: any) => {
 
     return (
         <LandingPage>
