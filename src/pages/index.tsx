@@ -1,8 +1,16 @@
 import LandingPage from '@/common/components/layouts/landing-page'
 import Link from 'next/link'
 
-export default function Home() {
-  let posts = []
+export async function getStaticProps() {
+  let response = await fetch(`${process.env.HOST_NAME}/api/posts`).then(response => response.json())
+  return {
+    props: {
+      posts: response.posts ? response.posts : null
+    }
+  }
+}
+
+export default function Home({ posts }) {
 
   return (
     <LandingPage>
@@ -25,18 +33,18 @@ export default function Home() {
           <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             {posts.map((post: any) => {
               return (
-                <>
+                <div key={post.id}>
                   <div className="post-preview">
-                    <Link href={`/api/posts/${post.id}`}>
+                    <Link href={`/post/${post.id}`}>
                       <h2 className="post-title">
                         {post.title}
                       </h2>
                       {post.subTitle ? (<h3 className="post-subtitle">{post.subTitle}</h3>) : "null"}
                     </Link>
-                    <p className="post-meta">Posted by <Link href="#">{post.postedBy}</Link> on {post.date}</p>
+                    <p className="post-meta">Posted by <Link href="#">{post.postedBy}</Link> on {post.createdAt}</p>
                   </div>
                   <hr />
-                </>
+                </div>
               )
             })}
 

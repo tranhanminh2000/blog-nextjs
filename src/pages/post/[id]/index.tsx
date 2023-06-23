@@ -25,14 +25,14 @@ const PostPage = ({ post }) => {
 
     return (
         <LandingPage>
-            <header className="intro-header" style={{ backgroundImage: "url('/img/post-bg.jpg')" }}>
+            <header className="intro-header" style={{ backgroundImage: post.img ? `url('${post.img}')` : "url('/img/post-bg.jpg')" }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                             <div className="post-heading">
-                                <h1>Man must explore, and this is exploration at its greatest</h1>
-                                <h2 className="subheading">Problems look mighty small from 150 miles up</h2>
-                                <span className="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                                <h1>{post.title}</h1>
+                                <h2 className="subheading">{post.subTitle}</h2>
+                                <span className="meta">Posted by <a href="#">{post.postedBy}</a> {post.createdAt}</span>
                             </div>
                         </div>
                     </div>
