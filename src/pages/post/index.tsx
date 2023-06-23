@@ -4,7 +4,7 @@ import Image from "next/image";
 const PostPage = () => {
     return (
         <LandingPage>
-            <header className="intro-header" style={{ backgroundImage: "url(&apos;/img/post-bg.jpg&apos;)" }}>
+            <header className="intro-header" style={{ backgroundImage: "url('/img/post-bg.jpg')" }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -17,7 +17,7 @@ const PostPage = () => {
                     </div>
                 </div>
             </header>
-
+ 
             <article>
                 <div className="container">
                     <div className="row">
